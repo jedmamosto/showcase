@@ -1,0 +1,29 @@
+{
+  "name": "showcase-toolkit",
+  "version": "1.0.0",
+  "description": "Universal personal portfolio and AI career command center toolkit for Antigravity",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^20.16.0",
+    "jsdom": "^24.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  },
+  "keywords": [
+    "antigravity",
+    "skill",
+    "portfolio",
+    "career",
+    "resume-builder",
+    "case-study"
+  ],
+  "author": "Antigravity Showcase Architects",
+  "license": "MIT"
+}

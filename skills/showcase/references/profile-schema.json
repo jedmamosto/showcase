@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://showcase.dev/schemas/profile-schema.json",
+  "title": "MasterCareerProfileFrontmatter",
+  "description": "YAML frontmatter schema for master career profile (.agents/career/profile.md).",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "contact",
+    "targetRoles",
+    "coreCompetencies",
+    "featuredProjectSlugs",
+    "keyMetrics",
+    "lastUpdated"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "contact": {
+      "type": "object",
+      "required": ["fullName", "headline", "location", "email"],
+      "properties": {
+        "fullName": { "type": "string" },
+        "headline": { "type": "string" },
+        "location": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "website": { "type": "string" },
+        "linkedin": { "type": "string" },
+        "github": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "targetRoles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "coreCompetencies": {
+      "type": "object",
+      "required": ["domain", "technical", "tools"],
+      "properties": {
+        "domain": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "technical": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tools": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "featuredProjectSlugs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "keyMetrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "value", "context"],
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "context": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "ISO 8601 timestamp string (e.g. 2026-09-01T00:00:00.000Z)."
+    }
+  },
+  "additionalProperties": false
+}

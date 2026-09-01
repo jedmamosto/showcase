@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://showcase.dev/schemas/project-schema.json",
+  "title": "CaseStudyFrontmatter",
+  "description": "YAML frontmatter schema for project case studies (.agents/career/projects/*.md).",
+  "type": "object",
+  "required": [
+    "slug",
+    "title",
+    "tagline",
+    "category",
+    "role",
+    "organization",
+    "timeframe",
+    "status",
+    "statusBadge",
+    "isFeatured",
+    "stack",
+    "metrics"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": { "type": "string" },
+    "tagline": { "type": "string" },
+    "category": { "type": "string" },
+    "role": { "type": "string" },
+    "organization": { "type": "string" },
+    "timeframe": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["Production", "Live", "Active Development", "Concept", "Case Study"]
+    },
+    "statusBadge": { "type": "string" },
+    "isFeatured": { "type": "boolean" },
+    "featuredRank": { "type": "integer" },
+    "liveUrl": { "type": "string" },
+    "githubUrl": { "type": "string" },
+    "stack": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "properties": {
+          "label": { "type": "string" },
+          "value": { "type": "string" },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "videos": {
+      "type": "object",
+      "properties": {
+        "productDemoUrl": { "type": "string" },
+        "workflowDemoUrl": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

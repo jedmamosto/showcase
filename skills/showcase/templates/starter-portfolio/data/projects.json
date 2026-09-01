@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "cloud-analytics-dashboard",
+    "title": "Cloud Analytics Dashboard",
+    "tagline": "Redesigned the core monitoring flow for 12,000 active engineers, cutting setup time by 40%.",
+    "category": "UX Design",
+    "role": "Lead Product Designer",
+    "organization": "CloudScale Systems",
+    "timeframe": "2025",
+    "status": "Production",
+    "statusBadge": "Live in Production",
+    "isFeatured": true,
+    "featuredRank": 1,
+    "liveUrl": "https://example.com/cloud-analytics",
+    "githubUrl": "https://github.com/example/cloud-analytics",
+    "stack": ["Product Design", "B2B SaaS", "Design Systems"],
+    "metrics": [
+      { "label": "Setup Time", "value": "-40%", "detail": "Reduced from 15m to 9m" },
+      { "label": "Active Users", "value": "12,000+", "detail": "Weekly engineers" }
+    ],
+    "description": "A unified telemetry and observability workspace that allows infrastructure engineers to identify and resolve latency bottlenecks in minutes."
+  },
+  {
+    "slug": "paypulse-checkout-experience",
+    "title": "PayPulse Checkout Experience",
+    "tagline": "Simplified payment steps and boosted mobile checkout completion by 28%.",
+    "category": "FinTech",
+    "role": "Senior UX/UI Designer",
+    "organization": "PayPulse Inc.",
+    "timeframe": "2024",
+    "status": "Production",
+    "statusBadge": "Live in Production",
+    "isFeatured": true,
+    "featuredRank": 2,
+    "liveUrl": "https://example.com/paypulse",
+    "githubUrl": "https://github.com/example/paypulse",
+    "stack": ["Mobile App", "FinTech", "Checkout Flow"],
+    "metrics": [
+      { "label": "Conversion Rate", "value": "+28%", "detail": "Mobile checkout increase" },
+      { "label": "Drop-off Rate", "value": "-35%", "detail": "Fewer payment errors" }
+    ],
+    "description": "Streamlined one-tap payment experience designed for global ecommerce customers with native biometric authentication."
+  },
+  {
+    "slug": "zenith-developer-platform",
+    "title": "Zenith Developer Platform",
+    "tagline": "Built a modular documentation system and API sandbox for 50,000 third-party developers.",
+    "category": "AI Product",
+    "role": "Design Systems Engineer",
+    "organization": "Zenith AI",
+    "timeframe": "2024",
+    "status": "Production",
+    "statusBadge": "Live in Production",
+    "isFeatured": true,
+    "featuredRank": 3,
+    "liveUrl": "https://example.com/zenith",
+    "githubUrl": "https://github.com/example/zenith",
+    "stack": ["Developer Tools", "AI Product", "Design Systems"],
+    "metrics": [
+      { "label": "API Adoption", "value": "+65%", "detail": "Quarter-over-quarter growth" },
+      { "label": "Support Tickets", "value": "-50%", "detail": "Fewer integration issues" }
+    ],
+    "description": "Interactive API playground and component library allowing developers to test AI endpoints in real time directly from the browser."
+  }
+]

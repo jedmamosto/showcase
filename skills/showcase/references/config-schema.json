@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://showcase.dev/schemas/config-schema.json",
+  "title": "ShowcaseConfig",
+  "description": "Configuration specification for Showcase personal portfolio and career center workspace.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "mode",
+    "framework",
+    "portfolioDir",
+    "careerDir",
+    "theme",
+    "exportTargets",
+    "contact"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["existing-portfolio", "greenfield-starter"]
+    },
+    "framework": {
+      "type": "string",
+      "enum": [
+        "nextjs",
+        "astro",
+        "vite",
+        "html-static",
+        "remix",
+        "nuxt",
+        "sveltekit",
+        "custom"
+      ]
+    },
+    "portfolioDir": {
+      "type": "string",
+      "description": "Relative path to personal portfolio directory (e.g. '.' or 'personal-portfolio')."
+    },
+    "careerDir": {
+      "type": "string",
+      "default": ".agents/career",
+      "description": "Relative path to career center workspace directory."
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "warm-editorial",
+        "clean-minimal",
+        "bold-creative",
+        "dark-studio"
+      ]
+    },
+    "exportTargets": {
+      "type": "object",
+      "required": ["pdf", "atsText", "pitchNote"],
+      "properties": {
+        "pdf": { "type": "boolean" },
+        "atsText": { "type": "boolean" },
+        "pitchNote": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "required": ["email"],
+      "properties": {
+        "email": { "type": "string" },
+        "linkedin": { "type": "string" },
+        "bookingUrl": { "type": "string" },
+        "github": { "type": "string" },
+        "website": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "adapter": {
+      "type": "object",
+      "required": ["format"],
+      "properties": {
+        "projectDataFile": { "type": "string" },
+        "format": {
+          "type": "string",
+          "enum": [
+            "typescript",
+            "json",
+            "markdown-collections",
+            "html"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
