@@ -18,7 +18,7 @@ The `project-publisher` skill provides a 4-phase pipeline to inspect any softwar
 ## 1. Operating Invariants & Guiding Questions
 
 - **Why This Skill Exists**: Prevents unverified claims, broken schemas, and unformatted case studies by automating codebase metric extraction, human review gates, and live build verification.
-- **ASD-STE100 Language Rule**: Keep all sentences strictly under 20 words. Write in active voice.
+- **CEFR A2 & ASD-STE100 Plain Language**: Keep all sentences under 20 words. Use simple words and active voice. Avoid robotic jargon.
 - **Positive-Negative Rule Pairing**: Always pair constraints (`DO NOT [forbidden action] ... ALWAYS [required action]`).
 - **Guiding Self-Questions (Pareto 80/20 Grounded)**:
   - _Pre-Flight_: *"Did I inspect repository files to gather verified test counts and tech stack metadata before drafting?"*

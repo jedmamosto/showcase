@@ -4,13 +4,15 @@ When authoring or drafting a `CaseStudy` for your portfolio, adhere strictly to 
 
 ---
 
-## 1. Zero-Hedging & Proof-First Claims
+## 1. Plain Human Language (CEFR A2 & ASD-STE100)
 
-- **Banned Adjectives**: Never use *"seamless"*, *"cutting-edge"*, *"revolutionary"*, *"blazing fast"*, *"robust"*, *"effortless"*, or *"groundbreaking"*.
-- **Anchor with Concrete Mechanisms**: State the exact physical mechanism, algorithm, or number.
-  - ❌ *Bad*: *"A revolutionary loan system providing ultra-fast calculation."*
-  - ✅ *Good*: *"Institutional loan engine replacing manual spreadsheets with CPA-validated amortization algorithms."*
-- **ASD-STE100 Plain Language**: Keep sentences under 20 words. Use active voice. State technical facts plainly.
+- **Plain Words Over Jargon**: Avoid robotic, academic, or corporate buzzwords. Write so anyone can understand quickly.
+  - ❌ *Robotic*: *"Engineered deterministic AST frontmatter parser with zero-custody telemetry synchronization."*
+  - ✅ *Plain*: *"Built a smart reader that updates your website safely without breaking existing files."*
+- **Sentence Length**: Keep every sentence strictly under 20 words.
+- **Active Voice**: Use active verbs (e.g. "We built", "It saves", "You run").
+- **Zero AI Slop**: Never use *"seamless"*, *"cutting-edge"*, *"revolutionary"*, *"blazing fast"*, *"robust"*, *"effortless"*, *"groundbreaking"*, *"empower"*, *"spearhead"*, or *"streamline"*.
+- **Anchor with Real Facts**: State exact test counts, file counts, real numbers, or plain mechanisms.
 
 ---
 
