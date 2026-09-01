@@ -243,6 +243,28 @@ lastUpdated: "${new Date().toISOString()}"
     const starterTemplateDir = options.starterTemplateDir || path.resolve(__dirname, '..', 'templates', 'starter-portfolio');
     if (fs.existsSync(starterTemplateDir)) {
       copyDirNonDestructive(starterTemplateDir, targetDir);
+
+      // Personalize index.html with user's selected theme and contact info
+      const targetIndexHtml = path.join(targetDir, 'index.html');
+      if (fs.existsSync(targetIndexHtml)) {
+        let html = fs.readFileSync(targetIndexHtml, 'utf8');
+        if (theme) {
+          html = html.replace(/data-theme="[^"]*"/, `data-theme="${theme}"`);
+        }
+        if (options.contact?.fullName) {
+          html = html.replace(/Jane Doe/g, options.contact.fullName);
+        }
+        if (options.contact?.headline) {
+          html = html.replace(/Lead Product Designer &amp; Design Systems Engineer/g, options.contact.headline)
+                     .replace(/Lead Product Designer & Design Systems Engineer/g, options.contact.headline)
+                     .replace(/Product Designer &amp; Systems Engineer/g, options.contact.headline)
+                     .replace(/Product Designer & Systems Engineer/g, options.contact.headline);
+        }
+        if (options.contact?.email) {
+          html = html.replace(/jane@example\.com/g, options.contact.email);
+        }
+        fs.writeFileSync(targetIndexHtml, html, 'utf8');
+      }
     }
   }
 

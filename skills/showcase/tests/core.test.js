@@ -178,6 +178,26 @@ describe('Showcase Core Automation Suite', () => {
       assert.ok(fs.existsSync(path.join(tempDir, '.agents', 'career', 'applications')));
       assert.ok(fs.existsSync(path.join(tempDir, 'showcase.config.json')));
     });
+
+    test('personalizes greenfield starter index.html with selected theme and contact info', () => {
+      initWorkspace({
+        targetDir: tempDir,
+        mode: 'greenfield-starter',
+        theme: 'dark-studio',
+        contact: {
+          fullName: 'Morgan Black',
+          headline: 'Principal AI Architect',
+          email: 'morgan@example.com'
+        }
+      });
+
+      const indexPath = path.join(tempDir, 'index.html');
+      assert.ok(fs.existsSync(indexPath), 'index.html must exist');
+      const html = fs.readFileSync(indexPath, 'utf8');
+      assert.ok(html.includes('data-theme="dark-studio"'), 'Should apply selected dark-studio theme');
+      assert.ok(html.includes('Morgan Black'), 'Should personalize full name in index.html');
+      assert.ok(html.includes('morgan@example.com'), 'Should personalize email in index.html');
+    });
   });
 
   // =========================================================================

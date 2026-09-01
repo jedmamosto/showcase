@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 - **Antigravity Skill Definition (`SKILL.md`)**: Full interactive command router (`/showcase`, `/showcase init`, `/showcase resume`, `/showcase pitch`, `/showcase publish`, `/showcase hunt`, `/showcase polish`, `/showcase profile`, `/showcase preview`) with CEFR A2 user dialogues and NN/g 3-part error recovery patterns.
 - **Data Schemas & Reference Rules**: JSON schemas for `config-schema.json`, `profile-schema.json`, `project-schema.json`, and comprehensive ATS compliance guide (`ats-rules.md`).
 - **Automated Verification Suite**: 15 deterministic unit and integration tests (`core.test.js`) verifying framework detection, zero-deletion safety, career injection, resume compilation, and publishing.
-- **Living Architectural Specifications**: Comprehensive specs covering UX Strategy Blueprint, Visual Presets & Wireframes, System Architecture, ADR-0001, Behavioral Verification Plan (BVP), and Master Implementation Plan.
+- **Public Documentation Hub**: Clean 2-tier documentation organized into User Guides (`docs/guides/` in CEFR A2 English) and Developer Reference (`docs/reference/` in ASD-STE100) with a master router ([`docs/index.md`](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/index.md)).
+- **Dual-Language Standard & Rendering Integrity**: Verified CEFR A2 English across user-facing guides and ASD-STE100 across developer specs; patched Mermaid diagram parsing strings for universal cross-platform rendering.
 
 [1.0.0]: file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/

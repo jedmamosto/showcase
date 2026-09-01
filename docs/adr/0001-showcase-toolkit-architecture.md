@@ -38,18 +38,18 @@ We adopt the **Dual-Engine Architecture** for the `showcase` toolkit:
 
 ```mermaid
 flowchart LR
-    subgraph Engine2 [Engine 2: Private Career Center]
-        P[profile.md] --> R[Resume & Pitch Compiler]
-        PJ[projects/*.md] --> R
-        R --> APP[applications/slug/]
+    subgraph Engine2 ["Engine 2: Private Career Center"]
+        P["profile.md"] --> R["Resume and Pitch Compiler"]
+        PJ["projects/*.md"] --> R
+        R --> APP["applications/slug/"]
     end
-    subgraph Adapter [Showcase Workspace Adapter]
-        CFG[showcase.config.json]
-        DET[Workspace Detector]
+    subgraph Adapter ["Showcase Workspace Adapter"]
+        CFG["showcase.config.json"]
+        DET["Workspace Detector"]
     end
-    subgraph Engine1 [Engine 1: Public Showcase]
-        WEB[Next.js / Astro / HTML Site]
-        PUB[Case Study Sync]
+    subgraph Engine1 ["Engine 1: Public Showcase"]
+        WEB["Next.js / Astro / HTML Site"]
+        PUB["Case Study Sync"]
     end
     DET --> CFG
     PJ --> PUB --> WEB
@@ -67,4 +67,4 @@ flowchart LR
 ## 5. Consequences & Downstream Impact
 - **Positive Impact**: Non-destructive setup guarantees zero risk for active personal portfolios; single source of truth for resume tailoring and job outreach.
 - **Negative / Trade-off Impact**: Requires the agent framework to parse markdown frontmatter and maintain sync adapters across diverse web frameworks.
-- **Verification Plan**: Run test suite in [showcase-bvp.md](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/testing/showcase-bvp.md) verifying Path A detection on existing repos and Path B scaffolding in empty directories.
+- **Verification Plan**: Run test suite in [core.test.js](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/tests/core.test.js) verifying Path A detection on existing repos and Path B scaffolding in empty directories.

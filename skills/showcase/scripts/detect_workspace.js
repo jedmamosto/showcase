@@ -160,7 +160,7 @@ export function detectWorkspace(targetDir = process.cwd()) {
     projectDataFile = 'data/projects.json';
   }
 
-  return {
+  const result = {
     schemaVersion: '1.0.0',
     mode,
     framework,
@@ -174,6 +174,24 @@ export function detectWorkspace(targetDir = process.cwd()) {
     },
     indicators
   };
+
+  // Extract candidate profile metadata from package.json if available
+  if (pkg) {
+    result.detectedMetadata = {};
+    if (pkg.author) {
+      if (typeof pkg.author === 'string') {
+        result.detectedMetadata.fullName = pkg.author.replace(/<.*?>|\(.*?\)/g, '').trim();
+      } else if (typeof pkg.author === 'object' && pkg.author.name) {
+        result.detectedMetadata.fullName = pkg.author.name;
+        if (pkg.author.email) result.detectedMetadata.email = pkg.author.email;
+        if (pkg.author.url) result.detectedMetadata.website = pkg.author.url;
+      }
+    }
+    if (pkg.name) result.detectedMetadata.projectName = pkg.name;
+    if (pkg.description) result.detectedMetadata.headline = pkg.description;
+  }
+
+  return result;
 }
 
 // CLI Entry Point

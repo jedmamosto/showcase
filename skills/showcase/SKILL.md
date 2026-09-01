@@ -48,11 +48,11 @@ Showcase provides a dual-engine architecture for personal websites and private c
 
 ```mermaid
 flowchart TD
-    CMD[/showcase init] --> DETECT[scripts/detect_workspace.js]
-    DETECT -->|Existing Site Found| PATH_A[Path A: Connect Existing Portfolio]
-    DETECT -->|Empty Directory| PATH_B[Path B: Greenfield Starter Portfolio]
-    PATH_A --> Q_A[Ask Role & Top Achievements] --> WRITE_A[Inject .agents/career & profile.md]
-    PATH_B --> Q_B[Ask Name, Theme & Contact] --> COPY_B[Copy starter-portfolio & Inject career hub]
+    CMD["/showcase init"] --> DETECT["scripts/detect_workspace.js"]
+    DETECT -->|Existing Site Found| PATH_A["Path A: Connect Existing Portfolio"]
+    DETECT -->|Empty Directory| PATH_B["Path B: Greenfield Starter Portfolio"]
+    PATH_A --> Q_A["Ask Role and Top Achievements"] --> WRITE_A["Inject .agents/career and profile.md"]
+    PATH_B --> Q_B["Ask Name, Theme and Contact"] --> COPY_B["Copy starter-portfolio and Inject career hub"]
 ```
 
 - **Path A (Existing Site)**: Connects Next.js, Astro, Vite, or HTML sites safely. Injects `.agents/career/` without altering site code.
