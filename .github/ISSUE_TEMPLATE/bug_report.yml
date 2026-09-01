@@ -1,0 +1,47 @@
+name: Bug Report
+description: Report a reproducible problem or unexpected behavior in Showcase.
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please ensure you do not include sensitive personal information or API keys.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What Happened?
+      description: A clear and concise description of the bug.
+      placeholder: When running /showcase init, the tool failed to detect...
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Open folder in VS Code
+        2. Run `/showcase init`
+        3. Observe error...
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Web Framework / Environment
+      options:
+        - "Greenfield Starter (No existing code)"
+        - "Next.js"
+        - "Astro"
+        - "Vite / Static HTML"
+        - "Remix / Nuxt / SvelteKit"
+        - "Custom"
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Node version, OS version, or logs.
+      placeholder: Windows 11, Node v20.16.0
