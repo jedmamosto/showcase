@@ -1,130 +1,170 @@
 # Showcase: Personal Portfolio & Career Command Center
 
-**Showcase** is an open, easy-to-use toolkit for personal portfolios and private career intelligence. It gives you and your friends a simple way to launch a high-craft personal website and run a private AI career command center.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Tests: 19 Passed](https://img.shields.io/badge/Tests-19%20Passed-success.svg)](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/tests/core.test.js)
+[![Accessibility: WCAG AA/AAA](https://img.shields.io/badge/Accessibility-WCAG%20AA%2FAAA-emerald.svg)](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/visual-themes.md)
+[![SemVer: 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-purple.svg)](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/CHANGELOG.md)
+
+**Showcase** is an open-source toolkit for personal portfolios and private career intelligence. It gives you a fast, accessible personal website and a private AI career center on your computer.
 
 ---
 
-## The Dual-Engine System
+## 1. The Dual-Engine System
 
-Showcase operates with two complementary engines:
+Showcase solves two problems in one simple workflow:
 
-1. **Engine 1: Public Showcase**: A clean, fast, accessible personal website that presents your work, case studies, and contact options.
-2. **Engine 2: Private Career Center**: A private AI workspace (`.agents/career/`) that tailors resumes, writes pitch messages, and organizes your career stories.
+1. **Engine 1: Public Showcase**: A clean, accessible personal website that presents your work, case studies, and contact details.
+2. **Engine 2: Private Career Center**: A private folder (`.agents/career/`) where AI helps you tailor resumes, write pitch emails, and organize your work history.
 
 ```mermaid
 flowchart LR
-    A["Your Work and Story"] --> B["Showcase Toolkit"]
-    B --> C["Public Showcase: Personal Website"]
-    B --> D["Private Career Center: Resume and Pitch Builder"]
-    C --> E["Inbound Leads and Opportunities"]
-    D --> F["Tailored Job Applications"]
+    Work["Your Work & Experience"] --> Showcase["Showcase Toolkit"]
+    Showcase --> PublicSite["Public Portfolio: Fast Personal Website"]
+    Showcase --> CareerHub["Private Career Hub: .agents/career/"]
+    PublicSite --> Inbound["Inbound Leads & Clients"]
+    CareerHub --> TailoredApps["Tailored Resumes & 80-Word Pitches"]
 ```
 
 ---
 
-## Key Features
+## 2. Why Choose Showcase?
 
-- **2-Minute Guided Setup**: Answer 3 quick questions in plain English to set up your personal website and career center.
-- **4 Visual Style Presets**: Choose between *Warm Editorial*, *Clean Minimal*, *Bold Creative*, or *Dark Studio*.
-- **Non-Destructive Integration (Path A)**: Connect Showcase to your existing personal website without modifying or moving your source files.
-- **Zero-Config Greenfield Starter (Path B)**: Launch a standalone, zero-dependency HTML5 portfolio that opens instantly in any browser.
-- **One-Click Tailored Resumes**: Generate single-page vector PDFs, ATS plain-text copy buffers, and 80-word founder introduction notes.
-- **Zero Technical Jargon**: Built for designers, copywriters, career switchers, and developers. No complex command-line syntax required.
+| Traditional Site Builders | Raw Resumes & Notion Docs | Showcase Toolkit |
+| :--- | :--- | :--- |
+| Expensive monthly subscriptions ($15–$40/mo). | Scattered notes and untyped documents. | **100% Free & Open-Source** (MIT License). |
+| Vendor lock-in; hard to export data. | Manual copy-pasting for every job post. | **100% Data Ownership** (Plain Markdown & JSON). |
+| Complex code setup or bloated templates. | No public portfolio or web presence. | **Zero-Build Starter** (Runs in any browser). |
+| No AI resume tailoring assistance. | Resumes fail automated ATS scans. | **Built-in AI Application Kit** (PDF, ATS & Pitches). |
 
 ---
 
-## Installation & Setup
+## 3. The 4 Visual Style Presets
+
+Showcase includes 4 built-in style presets powered by semantic OKLCH CSS tokens:
+
+| Preset | Aesthetic & Vibe | Typography Pairing | Recommended For |
+| :--- | :--- | :--- | :--- |
+| **Warm Editorial** | Warm paper canvas, calm off-white, elegant serif headlines | `Newsreader` (Serif) + `Inter` (Sans) | Writers, Researchers, Strategists, Consultants |
+| **Clean Minimal** | Bright white background, sharp black ink, Swiss grid | `Hanken Grotesk` (Sans) + `Inter` (Sans) | Product Designers, UX Leads, Project Managers |
+| **Bold Creative** | Soft lilac canvas, vibrant purple accents, modern layout | `Syne` (Display) + `Plus Jakarta Sans` | Visual Artists, Animators, Brand Creators |
+| **Dark Studio** | Deep obsidian black, glass cards, glowing status chip | `Geist Sans` (Modern) + `JetBrains Mono` | Engineers, AI Developers, Technical Founders |
+
+---
+
+## 4. Installation & Quickstart
 
 Choose the setup method that works best for you:
 
 ### Method 1: Use with AI Assistant (Recommended)
 
-1. Copy or clone the `showcase` skill into your project or `.agents/skills/` directory:
+1. Clone or copy the `showcase` skill into your project:
    ```bash
-   git clone https://github.com/jedm-dev/showcase.git .agents/skills/showcase
+   git clone https://github.com/jedmamosto/showcase.git .agents/skills/showcase
    ```
-2. Open your AI chat and type:
+2. In your AI chat window, type:
    ```text
    /showcase init
    ```
-3. Answer the 3 quick questions. Showcase will configure your website and career center in under 2 minutes.
+3. Answer the 3 quick questions. Showcase will configure your portfolio and career center in under 2 minutes.
+
+---
 
 ### Method 2: Command Line (Node.js)
 
-Run the setup script directly in your terminal:
+Run the non-destructive setup script directly from your terminal:
 
 ```bash
+# In your project folder
 node skills/showcase/scripts/init_workspace.js
 ```
 
-- `--dir <path>`: Specify target project folder (defaults to current folder).
+**Optional CLI Flags**:
+- `--dir <path>`: Specify target folder (defaults to current directory).
 - `--theme <preset>`: Choose `warm-editorial`, `clean-minimal`, `bold-creative`, or `dark-studio`.
-- `--mode <type>`: Choose `existing-portfolio` or `greenfield-starter`.
+- `--mode <type>`: Choose `existing-portfolio` (Path A) or `greenfield-starter` (Path B).
+
+---
 
 ### Method 3: Instant HTML5 (No Code / Zero Build)
 
-1. Copy the [`starter-portfolio/`](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/templates/starter-portfolio/index.html) folder to your computer.
+1. Open [`skills/showcase/templates/starter-portfolio/`](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/templates/starter-portfolio/index.html).
 2. Double-click `index.html` to open it in your browser immediately.
-3. Drag the folder to [Vercel](https://vercel.com) or [Netlify](https://netlify.com) for free web hosting.
+3. Drag the folder into [Vercel](https://vercel.com) or [Netlify](https://netlify.com) for free online hosting.
 
 ---
 
-## Command Quick Reference
+## 5. Command Quick Reference
 
-| Command | Category | Purpose | Description |
+| Command | Category | What It Does | Example Usage |
 | :--- | :--- | :--- | :--- |
-| `/showcase init` | Setup | Start here | Sets up your website and career center in 3 simple steps. |
-| `/showcase resume [job]` | Career | Apply to a job | Creates a tailored 1-page resume for a target role. |
-| `/showcase pitch [name]` | Career | Contact a lead | Writes a friendly, 80-word introduction email or message. |
-| `/showcase publish [work]` | Portfolio | Add a project | Turns notes or links into a clean case study. |
-| `/showcase hunt [role]` | Career | Find opportunities | Matches your profile against open roles. |
-| `/showcase polish [page]` | Design | Improve appearance | Audits spacing, typography, and contrast. |
-| `/showcase profile` | Career | Update your story | Opens your master career notes to add new wins. |
-| `/showcase preview` | Portfolio | View live work | Opens your portfolio in your local browser. |
+| `/showcase init` | Setup | Runs 3-question setup for Path A or Path B. | `/showcase init` |
+| `/showcase resume [job]` | Career | Compiles a tailored 1-page PDF resume and ATS copy buffer. | `/showcase resume https://company.com/job` |
+| `/showcase pitch [name]` | Career | Drafts a friendly, 80-word introduction email with your best proof points. | `/showcase pitch "Sarah Chen"` |
+| `/showcase publish [notes]` | Portfolio | Converts raw project notes into a structured case study and syncs website. | `/showcase publish "Built checkout flow..."` |
+| `/showcase hunt [role]` | Career | Matches your master profile against open opportunity types. | `/showcase hunt "Lead UX Designer"` |
+| `/showcase polish [page]` | Design | Audits visual spacing, typography scale, and WCAG contrast. | `/showcase polish` |
+| `/showcase profile` | Career | Opens a guided interview to add new metrics and achievements. | `/showcase profile` |
+| `/showcase preview` | Portfolio | Opens your local portfolio website in your browser. | `/showcase preview` |
 
 ---
 
+## 6. Directory Structure
+
+```text
+showcase/
+├── README.md                                # This overview & quickstart guide
+├── CHANGELOG.md                             # Version history (SemVer 2.0.0)
+├── package.json                             # Package manifest & test commands
+├── docs/                                    # Complete documentation surface
+│   ├── index.md                             # Documentation Hub Index
+│   ├── guides/                              # Plain-English User Guides (CEFR A2)
+│   │   ├── quickstart.md                    # 2-Minute setup walkthrough
+│   │   ├── visual-themes.md                 # 4 visual style presets & tokens
+│   │   ├── career-hub.md                    # Private career center & resumes
+│   │   └── case-studies.md                  # Publishing case studies to site
+│   ├── reference/                           # Technical Specifications (ASD-STE100)
+│   │   ├── architecture.md                  # Dual-engine system topology
+│   │   ├── data-contracts.md                # TypeScript & JSON schema contracts
+│   │   ├── framework-adapters.md            # Next.js, Astro & HTML sync adapters
+│   │   └── cli-commands.md                  # Command router, FSM & error recovery
+│   └── adr/
+│       └── 0001-showcase-toolkit-architecture.md # Architecture Decision Record
+└── skills/
+    └── showcase/                            # Antigravity AI Skill package
+        ├── SKILL.md                         # Skill definition & command router
+        ├── references/                      # JSON schemas & ATS compliance rules
+        ├── scripts/                         # Core automation scripts (Node.js)
+        ├── templates/                       # Markdown & PDF resume templates
+        └── tests/                           # Automated unit & integration tests
+```
+
 ---
 
-## Toolkit Assets & Resources
+## 7. Testing & Verification
 
-Explore the core scripts, templates, schemas, and starter website:
+Run the deterministic test suite to verify workspace detection, zero-deletion backups, resume compilation, and skill packaging:
 
-- **AI Skill Assistant**: [Showcase Skill Definition](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/SKILL.md)
-- **Greenfield Starter Website**: [Starter Portfolio Template](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/templates/starter-portfolio/index.html)
-- **Core Automation Scripts**:
-  - [Workspace Detector](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/scripts/detect_workspace.js)
-  - [Workspace Initializer](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/scripts/init_workspace.js)
-  - [Resume Compiler](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/scripts/compile_resume.js)
-  - [Case Study Publisher](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/scripts/publish_case_study.js)
-- **Data Schemas & ATS Guide**:
-  - [Config Schema](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/references/config-schema.json)
-  - [Career Profile Schema](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/references/profile-schema.json)
-  - [Project Schema](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/references/project-schema.json)
-  - [ATS Parsing Rules](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/references/ats-rules.md)
-- **Document Templates**:
-  - [Profile Template](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/templates/profile_template.md)
-  - [Vector PDF Resume Template](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/templates/resume_template.html)
-  - [80-Word Pitch Template](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/skills/showcase/templates/pitch_template.md)
+```bash
+npm test
+```
+
+All 19 test cases run with Node's native test runner (`node:test`) with 0 external runtime dependencies.
 
 ---
 
-## Documentation & Guides
+## 8. Documentation & Guides
 
-Explore user guides and developer references in [`docs/`](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/index.md):
+Explore the complete documentation in [`docs/`](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/index.md):
 
-### User Guides (Everyday English)
-- **[2-Minute Quickstart Guide](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/quickstart.md)**: Setup your website and career center in 3 simple steps.
-- **[Visual Themes & Customization](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/visual-themes.md)**: 4 visual styles (*Warm Editorial*, *Clean Minimal*, *Bold Creative*, *Dark Studio*).
-- **[Private Career Center & Resumes](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/career-hub.md)**: Generate single-page PDF resumes, ATS text, and 80-word pitch notes.
-- **[Publishing Case Studies](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/case-studies.md)**: Turn project wins into structured proof on your portfolio.
+- **[2-Minute Quickstart Guide](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/quickstart.md)**
+- **[Visual Themes & Customization Guide](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/visual-themes.md)**
+- **[Private Career Center & Resumes Guide](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/career-hub.md)**
+- **[Publishing Case Studies Guide](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/guides/case-studies.md)**
+- **[System Architecture Reference](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/reference/architecture.md)**
+- **[Data Contracts & Schemas](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/reference/data-contracts.md)**
 
-### Developer & Architecture Reference
-- **[Documentation Hub Index](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/index.md)**: Master catalog of all guides and technical specs.
-- **[System Architecture](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/reference/architecture.md)**: Dual-engine system topology and data flows.
-- **[Data Contracts & Schemas](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/reference/data-contracts.md)**: Strict schemas for config, profile, and projects.
-- **[Framework Adapters](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/reference/framework-adapters.md)**: How adapters sync data to Next.js, Astro, or static HTML.
-- **[CLI Commands & Error Recovery](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/reference/cli-commands.md)**: Command router, finite state machine, and error handling.
-- **[ADR-0001: Architecture Decision](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/docs/adr/0001-showcase-toolkit-architecture.md)**: Dual-engine architecture decision record.
-- **[Release Changelog](file:///c:/Users/ASUS/Documents/VSCode/jedmamosto-portfolio/showcase/CHANGELOG.md)**: Version history adhering to SemVer 2.0.0 and Keep a Changelog 1.1.0.
+---
 
+## 9. License
+
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).

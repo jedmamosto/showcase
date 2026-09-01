@@ -4,8 +4,8 @@
   "description": "Universal personal portfolio and AI career command center toolkit for Antigravity",
   "type": "module",
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest",
+    "test": "node --test skills/showcase/tests/core.test.js",
+    "test:watch": "node --test --watch skills/showcase/tests/core.test.js",
     "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit"
   },
